@@ -4,7 +4,7 @@ PortSystem          1.0
 name                exa
 description         A modern replacement for ls
 long_description    exa is a replacement for ls with additional features like color-coding for file types, Git integration, and extended attributes.
-maintainers         zerok
+maintainers         zerok@zerokspot.com
 license             MIT
 categories          sysutils
 version             0.8.0
