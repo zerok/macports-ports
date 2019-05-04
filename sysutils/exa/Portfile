@@ -1,0 +1,29 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+PortSystem          1.0
+
+name                exa
+description         A modern replacement for ls
+long_description    exa is a replacement for ls with additional features like color-coding for file types, Git integration, and extended attributes.
+maintainers         zerok
+license             MIT
+categories          sysutils
+version             0.8.0
+platforms           darwin
+checksums           sha256 e5db9b1b3142102f7f26dae5d11f745c794d45ba9c4004310df7eaed30909c41
+homepage            https://github.com/ogham/exa
+master_sites        ${homepage}/releases/download/v${version}
+distfiles           ${name}-macos-x86_64-${version}.zip
+# Since this is not a tar.gz file, we have to tell macports how it
+# should extract the archive.
+use_zip             yes
+# Furthermore, the exa zip file doesn't contain a folder, so we will
+# have to create one:
+extract.mkdir       yes
+
+# We don't need to build anything as this is the binary release of exa
+use_configure       no
+build {}
+
+destroot {
+    xinstall -m 755 ${worksrcpath}/exa-macos-x86_64 ${destroot}${prefix}/bin/${name}
+}
