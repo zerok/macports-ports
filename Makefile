@@ -4,6 +4,7 @@ dist:
 	mkdir -p dist
 
 dist/ports.tar.bz2: dist
+	find . -name '*~' -delete && \
 	mkdir dist/ports && \
 	cp -R sysutils dist/ports/ && \
 	cd dist && tar -cjvf ports.tar.bz2 ports && \

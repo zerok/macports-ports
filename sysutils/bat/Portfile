@@ -1,0 +1,24 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+PortSystem          1.0
+
+name                bat
+description         A cat clone with wings
+long_description    exa a cat clone that supports syntax highlighting
+maintainers         zerok@zerokspot.com
+license             MIT
+categories          sysutils
+version             0.10.0
+platforms           darwin
+checksums           sha256 db9ec57888586dda0c4bc31b349b84dc5134e1278ac3fd4f1cab406aefc62920
+homepage            https://github.com/sharkdp/bat
+master_sites        ${homepage}/releases/download/v${version}
+distfiles           ${name}-v${version}-x86_64-apple-darwin.tar.gz
+worksrcdir          ${name}-v${version}-x86_64-apple-darwin
+
+# We don't need to build anything as this is the binary release of exa
+use_configure       no
+build {}
+
+destroot {
+    xinstall -m 755 ${worksrcpath}/bat ${destroot}${prefix}/bin/${name}
+}
