@@ -1,0 +1,25 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+PortSystem          1.0
+
+name                operator-sdk
+description         SDK for building Kubernetes applications
+long_description    SDK for building Kubernetes applications
+maintainers         zerok@zerokspot.com
+license             Apache License 2.0
+categories          devel
+version             0.8.0
+platforms           darwin
+checksums           sha256 61973ded07d3b076dc6dc0e59224a3bf692b2c9a06b2b77f3a22d369299d9785
+homepage            https://github.com/operator-framework/operator-sdk
+master_sites        ${homepage}/releases/download/v${version}
+distfiles           ${name}-v${version}-x86_64-apple-darwin
+worksrcdir          ${name}-v${version}-x86_64-apple-darwin
+
+# We don't need to build anything as this is the binary release of exa
+use_configure       no
+build {}
+extract {}
+
+destroot {
+    xinstall -m 755 ${distpath}/${name}-v${version}-x86_64-apple-darwin ${destroot}${prefix}/bin/${name}
+}
