@@ -7,9 +7,9 @@ long_description    exa a cat clone that supports syntax highlighting
 maintainers         zerok@zerokspot.com
 license             MIT
 categories          sysutils
-version             0.10.0
+version             0.11.0
 platforms           darwin
-checksums           sha256 db9ec57888586dda0c4bc31b349b84dc5134e1278ac3fd4f1cab406aefc62920
+checksums           sha256 bbe65ca55dc1d1dec2273cf8e5e7c2ac9f84c74548f13b947b573d00adf94dd5
 homepage            https://github.com/sharkdp/bat
 master_sites        ${homepage}/releases/download/v${version}
 distfiles           ${name}-v${version}-x86_64-apple-darwin.tar.gz
