@@ -20,4 +20,7 @@ release:
 	rsync -avz dist/* zerokspot.com:/srv/www/h10n.me/www/htdocs/macports-ports/ && \
 	rsync -avz pubkey.* zerokspot.com:/srv/www/h10n.me/www/htdocs/macports-ports/
 
-.PHONY: all clean release
+check_updates:
+	@cd _scripts && $(MAKE) $@
+
+.PHONY: all clean release check_updates
