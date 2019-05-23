@@ -61,7 +61,7 @@ for portfile in portfiles:
         if 'github.com' in url:
             latest_release = get_latest_release(url, github_token).lstrip('v')
             if latest_release != version:
-                print(f'{name}@{version} is OLD. New version available: {latest_release}')
+                print(f'{name}@{version} is OLD. New version available: {latest_release}\n  Download on {url}/releases')
             else:
                 print(f'{name}@{version} up to date')
             
