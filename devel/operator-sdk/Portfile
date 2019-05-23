@@ -7,9 +7,9 @@ long_description    SDK for building Kubernetes applications
 maintainers         zerok@zerokspot.com
 license             Apache License 2.0
 categories          devel
-version             0.8.0
+version             0.8.1
 platforms           darwin
-checksums           sha256 61973ded07d3b076dc6dc0e59224a3bf692b2c9a06b2b77f3a22d369299d9785
+checksums           sha256 07626c553ed47e8ebb7179db3d7fd758a8fe262bc9c8c06bc79d69c8e06ed4cd
 homepage            https://github.com/operator-framework/operator-sdk
 master_sites        ${homepage}/releases/download/v${version}
 distfiles           ${name}-v${version}-x86_64-apple-darwin
