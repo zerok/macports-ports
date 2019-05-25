@@ -1,0 +1,28 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+PortSystem          1.0
+
+name                hugo-extended
+description         Extended version of hugo
+long_description    Extended version of hugo that (among other things) also supports SASS/CSS
+maintainers         zerok@zerokspot.com
+license             Apache License 2.0
+categories          www
+version             0.55.6
+platforms           darwin
+checksums           sha256 dee91964da19f8632dbb4a9421d5c0fa52de9d1f10df96fed7bb256919febb77
+homepage            https://github.com/gohugoio/hugo
+master_sites        ${homepage}/releases/download/v${version}
+distfiles           hugo_extended_${version}_macOS-64bit.tar.gz
+worksrcdir          ${name}-v${version}
+
+# The archive doesn't create a folder by itself, so we have to do that
+# manually.
+extract.mkdir       yes
+
+# We don't need to build anything as this is the binary release of exa
+use_configure       no
+build {}
+
+destroot {
+    xinstall -m 755 ${worksrcpath}/hugo ${destroot}${prefix}/bin/${name}
+}
